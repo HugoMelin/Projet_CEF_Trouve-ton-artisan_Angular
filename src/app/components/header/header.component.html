@@ -1,5 +1,5 @@
 <header id="header">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg shadow-sm">
         <div class="container">
           <a class="navbar-brand" routerLink="/">
             <img src="/assets/img/Logo.png" alt="Logo Trouve ton artisan avec la région Auvergne-Rhône-Alpes" width="200px">
@@ -23,8 +23,9 @@
               </li>
             </ul>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <label for="search-input" class="d-none">Rechercher</label>
+              <input class="form-control me-2" id="search-input" placeholder="Rechercher" aria-label="Search" type="search" required="required" aria-required="true">
+              <button class="btn btn-outline-primary" type="submit">Search</button>
             </form>
           </div>
         </div>

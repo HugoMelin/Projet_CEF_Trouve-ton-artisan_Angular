@@ -1,5 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
+.btn-outline-primary {
+    --bs-btn-color: #0074c7;
+    --bs-btn-border-color: #0074c7;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0074c7;
+    --bs-btn-hover-border-color: #0074c7;
+    border-radius: 10rem;
+}
+
 @font-face {
     font-family: Graphik;
     font-weight: 100 400;

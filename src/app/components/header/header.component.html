@@ -7,8 +7,8 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="collapse navbar-collapse justify-content-end gap-2" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mb-2 mb-lg-0 text-end">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Bâtiment</a>
               </li>
@@ -25,7 +25,7 @@
             <form class="d-flex" role="search">
               <label for="search-input" class="d-none">Rechercher</label>
               <input class="form-control me-2" id="search-input" placeholder="Rechercher" aria-label="Search" type="search" required="required" aria-required="true">
-              <button class="btn btn-outline-primary" type="submit">Search</button>
+              <button class="btn btn-outline-primary px-4" type="submit"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
             </form>
           </div>
         </div>

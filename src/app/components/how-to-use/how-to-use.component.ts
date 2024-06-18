@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Titreh1Component } from '../titres/titreh1/titreh1.component';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-how-to-use',
   standalone: true,
-  imports: [ Titreh1Component ],
+  imports: [ NgFor, NgIf, Titreh1Component ],
   templateUrl: './how-to-use.component.html',
   styleUrl: './how-to-use.component.scss'
 })

@@ -1,0 +1,39 @@
+<div id="howToUse" class="container">
+    <app-titreh1 titre="Comment trouver mon artisan ?" />
+    <div class="row align-items-center my-2">
+        <div class="col-12 col-lg-6">
+            <img src="assets/img/howToFind.jpg" alt="Atelier menuiserie" width="100%">
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="accordion" id="accordionHowToUse">
+                <div *ngFor="let item of data; index as i" class="accordion-item">
+                    <h4 class="accordion-header" id="heading{{i}}">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="false" [attr.aria-controls]="'collapse'+i">
+                          {{ i+1 }}. {{ item.paragraphe }}
+                        </button>
+                    </h4>
+                    <div *ngIf="i === 0; else elseBlock" id="collapse{{i}}" class="accordion-collapse collapse show" [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionHowToUse">
+                        <div class="accordion-body">
+                            <ul>
+                                <li *ngFor="let sousPara of item.sousParagraphe">
+                                    {{ sousPara }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ng-template #elseBlock>
+                        <div id="collapse{{i}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionHowToUse">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li *ngFor="let sousPara of item.sousParagraphe">
+                                        {{ sousPara }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

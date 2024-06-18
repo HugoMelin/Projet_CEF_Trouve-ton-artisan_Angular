@@ -1,0 +1,21 @@
+#howToUse {
+    p {
+        --bs-border-color : #82b864;
+    }
+
+    li {
+        font-size: 1.4rem;
+    }
+
+    button{
+        font-family: Graphik, arial, sans-serif;
+    }
+
+    .accordion-button:not(.collapsed) {
+        color: white;
+        background-color: #82b864;
+    }
+
+    --bs-body-color : #384050;
+    --bs-primary-text-emphasis: #384050;
+}

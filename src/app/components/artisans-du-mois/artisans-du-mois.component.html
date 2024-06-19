@@ -3,7 +3,7 @@
         <app-titreh2 titre="Les artisans du mois"/>
     </div>
     <div class="row row-cols-1 row-cols-lg-3 g-4">
-        <div *ngFor="let artisan of artisans" class="col">
+        <div *ngFor="let artisan of artisans | artisanDuMoisFilter: artisans" class="col">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-start">

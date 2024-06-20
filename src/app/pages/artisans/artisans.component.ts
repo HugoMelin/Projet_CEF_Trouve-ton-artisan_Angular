@@ -21,6 +21,6 @@ export class ArtisansComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.categorie = params["categorie"];
     })
-    this.titleService.setTitle(this.categorie) 
+    this.titleService.setTitle(this.categorie + " | Trouve ton artisan") 
   }
 }

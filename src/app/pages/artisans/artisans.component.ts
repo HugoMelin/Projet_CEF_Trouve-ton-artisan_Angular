@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
 import { ActivatedRoute } from '@angular/router';
+import { Titreh1Component } from '../../components/titres/titreh1/titreh1.component';
 
 @Component({
   selector: 'app-artisans',
   standalone: true,
-  imports: [],
+  imports: [Titreh1Component],
   templateUrl: './artisans.component.html',
   styleUrl: './artisans.component.scss'
 })

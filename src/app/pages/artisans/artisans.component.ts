@@ -16,7 +16,7 @@ export class ArtisansComponent implements OnInit {
   constructor(
     private titleService:Title,
     private route: ActivatedRoute)
-      {}
+  {}
   
   ngOnInit() {
     this.route.params.subscribe(params => {

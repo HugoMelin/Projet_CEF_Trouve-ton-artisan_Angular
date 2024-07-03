@@ -2,6 +2,17 @@
     <div class="d-flex justify-content-center">
         <app-titreh1 titre="Nos artisans"/>
     </div>
-    <p>{{ categorie }}</p>
-    <p>artisans works!</p>
+    <div class="d-flex justify-content-center">
+        <app-titreh2 class="text-capitalize" [titre]="categorie"/>
+    </div>
+
+    <!-- Bar de recherche -->
+    <div class="container d-flex">
+        <div class="recherche d-flex rounded border p-2 gap-2">
+            <input class="ps-2" type="text" placeholder="Recherche" id="rechercheBar">
+            <label class="pe-2" for="rechercheBar"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></label>
+        </div>
+    </div>
+
+
 </div>

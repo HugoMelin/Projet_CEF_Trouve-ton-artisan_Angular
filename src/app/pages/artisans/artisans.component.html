@@ -1,4 +1,5 @@
 <div class="container">
+    <!-- Titres -->
     <div class="d-flex justify-content-center">
         <app-titreh1 titre="Nos artisans"/>
     </div>
@@ -14,5 +15,10 @@
         </div>
     </div>
 
-
+    <!-- Cartes d'artisans -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 my-2">
+        <div class="col my-2" *ngFor="let artisan of artisans">
+            <app-artisan-card [data]="artisan"/>
+        </div>
+    </div>
 </div>

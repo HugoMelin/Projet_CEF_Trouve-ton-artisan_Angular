@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Title} from "@angular/platform-browser";
+import { Title } from "@angular/platform-browser";
 import { ActivatedRoute } from '@angular/router';
 import { Titreh1Component } from '../../components/titres/titreh1/titreh1.component';
 import { Titreh2Component } from '../../components/titres/titreh2/titreh2.component';
@@ -9,11 +9,13 @@ import { ArtisanCardComponent } from '../../components/artisan-card/artisan-card
 import { NgFor } from '@angular/common';
 import { ArtisansDataService } from '../../services/artisans-data.service';
 import { CategoryFilterPipe } from '../../pipes/category-filter.pipe';
+import { SearchPipe } from '../../pipes/search.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-artisans',
   standalone: true,
-  imports: [Titreh1Component, Titreh2Component, FontAwesomeModule, ArtisanCardComponent, NgFor, CategoryFilterPipe],
+  imports: [Titreh1Component, Titreh2Component, FontAwesomeModule, ArtisanCardComponent, NgFor, CategoryFilterPipe, SearchPipe, FormsModule],
   templateUrl: './artisans.component.html',
   styleUrl: './artisans.component.scss'
 })
@@ -21,6 +23,7 @@ export class ArtisansComponent implements OnInit {
   faMagnifyingGlass = faMagnifyingGlass
   categorie: string = ""
   artisans:any
+  searchTerm:string = ""
 
   constructor(
     private titleService:Title,

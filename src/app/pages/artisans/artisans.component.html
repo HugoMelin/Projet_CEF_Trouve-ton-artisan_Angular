@@ -10,14 +10,14 @@
     <!-- Bar de recherche -->
     <div class="container d-flex">
         <div class="recherche d-flex rounded border p-2 gap-2">
-            <input class="ps-2" type="text" placeholder="Recherche" id="rechercheBar">
+            <input class="ps-2" type="text" placeholder="Recherche" id="rechercheBar" [(ngModel)]="searchTerm">
             <label class="pe-2" for="rechercheBar"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></label>
         </div>
     </div>
 
     <!-- Cartes d'artisans -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 my-2">
-        <div class="col my-2" *ngFor="let artisan of artisans | categoryFilter: categorie">
+        <div class="col my-2" *ngFor="let artisan of artisans | categoryFilter: categorie | search: searchTerm">
             <app-artisan-card [data]="artisan"/>
         </div>
     </div>

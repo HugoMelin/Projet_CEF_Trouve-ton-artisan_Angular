@@ -8,11 +8,12 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { ArtisanCardComponent } from '../../components/artisan-card/artisan-card.component';
 import { NgFor } from '@angular/common';
 import { ArtisansDataService } from '../../services/artisans-data.service';
+import { CategoryFilterPipe } from '../../pipes/category-filter.pipe';
 
 @Component({
   selector: 'app-artisans',
   standalone: true,
-  imports: [Titreh1Component, Titreh2Component, FontAwesomeModule, ArtisanCardComponent, NgFor],
+  imports: [Titreh1Component, Titreh2Component, FontAwesomeModule, ArtisanCardComponent, NgFor, CategoryFilterPipe],
   templateUrl: './artisans.component.html',
   styleUrl: './artisans.component.scss'
 })

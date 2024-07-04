@@ -1,0 +1,28 @@
+<div class="card mb-3 h-100">
+    <div class="card-body"> 
+        <h5 class="card-title text-center">{{ data.name }}</h5>
+        <div class="row h-100 d-flex align-items-center">
+            <!-- Images colonne de gauche -->
+            <div class="col-6">
+                <div [ngSwitch]="data.category">
+                    <img *ngSwitchCase="'Bâtiment'" src="assets/img/batiment.png" alt="Bâtiment" width="100%" class="rounded">
+                    <img *ngSwitchCase="'Services'" src="assets/img/service.png" alt="Services" width="100%" class="rounded">
+                    <img *ngSwitchCase="'Fabrication'" src="assets/img/fabrication.png" alt="Fabrication" width="100%" class="rounded">
+                    <img *ngSwitchCase="'Alimentation'" src="assets/img/alimentation.png" alt="Alimentation" width="100%" class="rounded">
+                </div>
+            </div>
+            
+            <!-- Colonne de droite -->
+            <div class="col-6 justify-content-end text-end">
+                <div class="progress mt-2" role="progressbar" aria-label="Basic example" [attr.aria-valuenow]="(data.note*100)/5" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" [attr.style]="'width:'+ (data.note*100)/5 +'%; background-color: #82b864;'">Note : {{ data.note }} / 5</div>
+                </div>
+                <p>{{ data.specialty }}</p>
+                <p>{{ data.location }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 d-flex mt-2 card-footer" style="border-top: 0;">
+       <a href="#" class="btn btn-primary card-link m-auto">Contacter</a>
+    </div>
+</div>

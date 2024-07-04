@@ -1,0 +1,8 @@
+.navbar-nav {
+    --bs-nav-link-hover-color : #00497c; 
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: black;
+    text-decoration: underline #0074c7  0.2rem;
+}

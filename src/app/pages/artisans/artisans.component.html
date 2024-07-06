@@ -11,7 +11,7 @@
     <!-- Bar de recherche -->
     <div *ngIf="!recherche" class="container d-flex">
         <div class="recherche d-flex rounded border p-2 gap-2">
-            <input class="ps-2" type="text" placeholder="Recherche" id="rechercheBar" [(ngModel)]="searchTerm">
+            <input class="ps-2" type="text" placeholder="Recherche" aria-label="Search" type="search" id="rechercheBar" [(ngModel)]="searchTerm">
             <label class="pe-2" for="rechercheBar"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></label>
         </div>
     </div>

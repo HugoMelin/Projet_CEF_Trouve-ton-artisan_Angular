@@ -20,6 +20,8 @@ export class HeaderComponent {
   onSearch(search:any) {
     if (this.searchTerm != "") {
       this.router.navigate(['artisans'], { queryParams: { search: search.toLowerCase() } });
+    } else {
+      this.router.navigate(['artisans'])
     }
   }
 }

@@ -6,16 +6,17 @@ import { Titreh2Component } from '../../components/titres/titreh2/titreh2.compon
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { ArtisanCardComponent } from '../../components/artisan-card/artisan-card.component';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { ArtisansDataService } from '../../services/artisans-data.service';
 import { CategoryFilterPipe } from '../../pipes/category-filter.pipe';
 import { SearchPipe } from '../../pipes/search.pipe';
 import { FormsModule } from '@angular/forms';
+import { InvalidSearchComponent } from '../../components/invalid-search/invalid-search.component';
 
 @Component({
   selector: 'app-artisans',
   standalone: true,
-  imports: [Titreh1Component, Titreh2Component, FontAwesomeModule, ArtisanCardComponent, NgFor, CategoryFilterPipe, SearchPipe, FormsModule],
+  imports: [Titreh1Component, Titreh2Component, FontAwesomeModule, ArtisanCardComponent, NgFor, CategoryFilterPipe, SearchPipe, FormsModule, NgIf, InvalidSearchComponent],
   templateUrl: './artisans.component.html',
   styleUrl: './artisans.component.scss'
 })
@@ -24,6 +25,7 @@ export class ArtisansComponent implements OnInit {
   categorie: string = ""
   artisans:any
   searchTerm:string = ""
+  recherche:any = ""
 
   constructor(
     private titleService:Title,
@@ -35,7 +37,14 @@ export class ArtisansComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.categorie = params["categorie"];
     })
-    this.titleService.setTitle(this.categorie + " | Trouve ton artisan") 
+
+    this.route.queryParams
+    .subscribe((params) => {
+    this.recherche = params;
+    this.recherche = this.recherche.search
+    })
+
+    this.titleService.setTitle("Annuaires | Trouve ton artisan") 
     this.artisans = this.artisansDataService.artisanList
   }
 }

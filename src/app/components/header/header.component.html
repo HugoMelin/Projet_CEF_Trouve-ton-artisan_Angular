@@ -24,8 +24,8 @@
             </ul>
             <form class="d-flex" role="search">
               <label for="search-input" class="d-none">Rechercher</label>
-              <input class="form-control me-2" id="search-input" placeholder="Rechercher" aria-label="Search" type="search" required="required" aria-required="true">
-              <button class="btn btn-outline-primary px-4" type="submit"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+              <input class="form-control me-2" id="search-input" placeholder="Rechercher" aria-label="Search" type="search" required="required" aria-required="true" [(ngModel)]="searchTerm" (keyup.enter)="onSearch(searchTerm)" name="searchTerm">
+              <button class="btn btn-outline-primary px-4" (click)="onSearch(searchTerm)" type="submit"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
             </form>
           </div>
         </div>

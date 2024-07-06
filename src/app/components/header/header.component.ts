@@ -18,6 +18,8 @@ export class HeaderComponent {
   router = inject(Router)
 
   onSearch(search:any) {
-    this.router.navigate(['artisans'], { queryParams: { search: search } });
+    if (this.searchTerm != "") {
+      this.router.navigate(['artisans'], { queryParams: { search: search.toLowerCase() } });
+    }
   }
 }

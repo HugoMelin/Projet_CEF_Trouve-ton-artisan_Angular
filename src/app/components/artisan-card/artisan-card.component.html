@@ -4,12 +4,7 @@
         <div class="row h-100 d-flex align-items-center">
             <!-- Images colonne de gauche -->
             <div class="col-6">
-                <div [ngSwitch]="data.category">
-                    <img *ngSwitchCase="'Bâtiment'" src="assets/img/batiment.png" alt="Bâtiment" width="100%" class="rounded">
-                    <img *ngSwitchCase="'Services'" src="assets/img/service.png" alt="Services" width="100%" class="rounded">
-                    <img *ngSwitchCase="'Fabrication'" src="assets/img/fabrication.png" alt="Fabrication" width="100%" class="rounded">
-                    <img *ngSwitchCase="'Alimentation'" src="assets/img/alimentation.png" alt="Alimentation" width="100%" class="rounded">
-                </div>
+                <app-images-artisans [category]="data.category"/>
             </div>
             
             <!-- Colonne de droite -->

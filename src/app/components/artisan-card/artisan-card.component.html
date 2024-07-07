@@ -9,9 +9,7 @@
             
             <!-- Colonne de droite -->
             <div class="col-6 justify-content-end text-end">
-                <div class="progress mt-2" role="progressbar" aria-label="Basic example" [attr.aria-valuenow]="(data.note*100)/5" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" [attr.style]="'width:'+ (data.note*100)/5 +'%; background-color: #82b864;'">Note : {{ data.note }} / 5</div>
-                </div>
+                <app-progress-bar [note]="data.note" />
                 <p>{{ data.specialty }}</p>
                 <p>{{ data.location }}</p>
             </div>

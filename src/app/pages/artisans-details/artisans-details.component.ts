@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArtisansDataService } from '../../services/artisans-data.service';
+import { Titreh1Component } from '../../components/titres/titreh1/titreh1.component';
 
 @Component({
   selector: 'app-artisans-details',
   standalone: true,
-  imports: [],
+  imports: [Titreh1Component],
   templateUrl: './artisans-details.component.html',
   styleUrl: './artisans-details.component.scss'
 })

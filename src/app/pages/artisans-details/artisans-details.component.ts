@@ -5,11 +5,12 @@ import { Titreh1Component } from '../../components/titres/titreh1/titreh1.compon
 import { ProgressBarComponent } from '../../components/progress-bar/progress-bar.component';
 import { ImagesArtisansComponent } from '../../components/images-artisans/images-artisans.component';
 import { Titreh2Component } from '../../components/titres/titreh2/titreh2.component';
+import { ContactFormComponent } from '../../components/contact-form/contact-form.component';
 
 @Component({
   selector: 'app-artisans-details',
   standalone: true,
-  imports: [Titreh1Component, ProgressBarComponent, ImagesArtisansComponent, Titreh2Component],
+  imports: [Titreh1Component, ProgressBarComponent, ImagesArtisansComponent, Titreh2Component, ContactFormComponent],
   templateUrl: './artisans-details.component.html',
   styleUrl: './artisans-details.component.scss'
 })

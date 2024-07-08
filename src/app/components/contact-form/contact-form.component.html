@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+    <app-titreh2 titre="Contacter l'artisan"/>
+</div>
+<form>
+    <div class="row">
+        <div class="col-12 col-lg-6 mb-3">
+          <label for="nom" class="form-label">Nom <span class="required">*</span></label>
+          <input type="text" class="form-control" id="nom" required="required" aria-required="true">
+        </div>
+        <div class="col-12 col-lg-6 mb-3">
+            <label for="prenom" class="form-label">Prénom <span class="required">*</span></label>
+            <input type="text" class="form-control" id="prenom" required="required" aria-required="true">
+        </div>
+        <div class="col-12 mb-3">
+            <div class="col-lg-6">
+                <label for="mail" class="form-label">Email <span class="required">*</span></label>
+                <input type="email" class="form-control" id="mail" required="required" aria-required="true">
+            </div>
+        </div>
+        <div class="col-12 mb-3">
+            <div class="col-lg-6">
+                <label for="objet" class="form-label">Objet de votre demande <span class="required">*</span></label>
+                <input type="text" class="form-control" id="objet" required="required" aria-required="true">
+            </div>
+        </div>
+        <div class="col-12 mb-3">
+            <label for="message" class="form-label">Votre demande <span class="required">*</span></label>
+            <textarea class="form-control" id="message" rows="4"></textarea>
+        </div>
+        <div class="col-12">
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary" type="submit">Soumettre</button>
+            </div>
+        </div>
+    </div>
+</form>

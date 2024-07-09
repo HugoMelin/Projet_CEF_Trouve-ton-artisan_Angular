@@ -45,6 +45,7 @@ export class ArtisansComponent implements OnInit {
 
     this.artisans = this.artisansDataService.artisanList
 
+    //Routing content-not-found
     if (!(this.categorie == "bâtiment" || this.categorie == "services" || this.categorie === "fabrication" || this.categorie === "alimentation" || !this.categorie)) {
       this.router.navigate(["content-not-found"])
     }

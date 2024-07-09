@@ -33,6 +33,7 @@ export class ArtisansDetailsComponent {
       this.data = this.artisansData.find((item: { id: any; }) => item.id === params['id'])
     })
 
+    //Routing content-not-found si utilisation mauvaise id
     if (!this.data) {
       this.router.navigate(["content-not-found"])
     }

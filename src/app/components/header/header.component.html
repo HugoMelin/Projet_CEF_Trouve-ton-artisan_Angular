@@ -1,12 +1,18 @@
 <header id="header">
     <nav class="navbar navbar-expand-lg shadow-sm">
         <div class="container">
+
+          <!--Logo-->
           <a class="navbar-brand" routerLink="/">
             <img src="/assets/img/Logo.png" alt="Logo Trouve ton artisan avec la région Auvergne-Rhône-Alpes" width="200px">
           </a>
+
+          <!--Burger-->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+
+          <!--Liens-->
           <div class="collapse navbar-collapse justify-content-end gap-2" id="navbarTogglerDemo02">
             <ul class="navbar-nav mb-2 mb-lg-0 text-end">
               <li class="nav-item">
@@ -22,6 +28,8 @@
                 <a class="nav-link" routerLinkActive="active" routerLink="/artisans/alimentation">Alimentation</a>
               </li>
             </ul>
+            
+            <!--Bar de recherche-->
             <form class="d-flex" role="search">
               <label for="search-input" class="d-none">Rechercher</label>
               <input class="form-control me-2" id="search-input" placeholder="Rechercher" aria-label="Search" type="search" required="required" aria-required="true" [(ngModel)]="searchTerm" (keyup.enter)="onSearch(searchTerm)" name="searchTerm">

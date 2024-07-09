@@ -20,6 +20,8 @@ export class ContactFormComponent {
   constructor(private sendMailService: SendMailService) {}
 
   sendMail(form:NgForm) {
+    this.sent = false
+    this.error = false
     this.sendMailService.sendMail(form.value,this.artisanMail).subscribe(
       info => {
         this.sent = true

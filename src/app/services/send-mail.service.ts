@@ -9,14 +9,14 @@ export class SendMailService {
 
   constructor(private http: HttpClient) { }
 
-  sendMail(name: string, email: string, to:string, subject:string, message: string) {
-    const data = {
-      name: name,
-      from: email,
-      to: to,
-      subject: subject,
-      text: message
-    };
-    return this.http.post(this.emailUrl, data);
+  sendMail(data:any, artisanMail:any) {
+    const mail = {
+      name: `${data.nom} ${data.prenom}`,
+      to: artisanMail,
+      from: data.mail,
+      subject: data.objet,
+      text: data.message
+    }
+    return this.http.post(this.emailUrl, mail);
   }
 }

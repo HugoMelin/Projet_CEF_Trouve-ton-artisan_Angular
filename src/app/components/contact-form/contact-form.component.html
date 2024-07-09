@@ -1,35 +1,70 @@
 <div class="d-flex justify-content-center">
     <app-titreh2 titre="Contacter l'artisan"/>
 </div>
-<form>
+<form #mailForm="ngForm" (ngSubmit)="sendMail(mailForm)">
     <div class="row">
+        <!-- Champs pour le nom-->
         <div class="col-12 col-lg-6 mb-3">
           <label for="nom" class="form-label">Nom <span class="required">*</span></label>
-          <input type="text" class="form-control" id="nom" required="required" aria-required="true">
+          <input type="text" class="form-control" id="nom" required="required" aria-required="true" name="nom" ngModel minlength="2" pattern="[a-zA-Z \-']*" #name="ngModel">
+          <div class="alert alert-danger mt-2" *ngIf="name.invalid && (name.dirty || name.touched)">
+            <div *ngIf="name.errors?.['required']">Le nom est requis.</div>
+            <div *ngIf="name.errors?.['minlength']">Le nom doit contenir au moins 2 caractères.</div>
+            <div *ngIf="name.errors?.['pattern']">Le nom doit contenir seulement des lettres.</div>
+          </div>
         </div>
+        <!-- Champs pour le prénom-->
         <div class="col-12 col-lg-6 mb-3">
             <label for="prenom" class="form-label">Prénom <span class="required">*</span></label>
-            <input type="text" class="form-control" id="prenom" required="required" aria-required="true">
+            <input type="text" class="form-control" id="prenom" required="required" aria-required="true" name="prenom" ngModel minlength="2" pattern="[a-zA-Z \-']*" #prenom="ngModel">
+            <div class="alert alert-danger mt-2" *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)">
+                <div *ngIf="prenom.errors?.['required']">Le prénom est requis.</div>
+                <div *ngIf="prenom.errors?.['minlength']">Le prénom doit contenir au moins 2 caractères.</div>
+                <div *ngIf="prenom.errors?.['pattern']">Le prénom doit contenir seulement des lettres.</div>
+              </div>
         </div>
+        <!-- Champs pour l'email-->
         <div class="col-12 mb-3">
             <div class="col-lg-6">
                 <label for="mail" class="form-label">Email <span class="required">*</span></label>
-                <input type="email" class="form-control" id="mail" required="required" aria-required="true">
+                <input type="email" class="form-control" id="mail" required="required" aria-required="true" name="mail" ngModel pattern="[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?" #email="ngModel">
+                <div class="alert alert-danger mt-2" *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.errors?.['required']">L'email est requis.</div>
+                    <div *ngIf="email.errors?.['pattern']">L'email n'est pas valide.</div>
+                  </div>
             </div>
         </div>
+        <!-- Champs pour l'objet du mail'-->
         <div class="col-12 mb-3">
             <div class="col-lg-6">
                 <label for="objet" class="form-label">Objet de votre demande <span class="required">*</span></label>
-                <input type="text" class="form-control" id="objet" required="required" aria-required="true">
+                <input type="text" class="form-control" id="objet" required="required" aria-required="true" name="objet" ngModel maxlength="255" minlength="3" #objet="ngModel">
+                <div class="alert alert-danger mt-2" *ngIf="objet.invalid && (objet.dirty || objet.touched)">
+                    <div *ngIf="objet.errors?.['required']">L'objet est requis.</div>
+                    <div *ngIf="objet.errors?.['maxlength']">L'objet doit contenir au maximum 255 caractères.</div>
+                    <div *ngIf="objet.errors?.['minlength']">L'objet doit contenir au moins 3 caractères.</div>
+                </div>
             </div>
         </div>
+        <!-- Champs pour le message-->
         <div class="col-12 mb-3">
             <label for="message" class="form-label">Votre demande <span class="required">*</span></label>
-            <textarea class="form-control" id="message" rows="4"></textarea>
+            <textarea class="form-control" id="message" rows="4" required="required" aria-required="true" name="message" ngModel maxlength="5000" minlength="3" #message="ngModel"></textarea>
+            <div class="alert alert-danger mt-2" *ngIf="message.invalid && (message.dirty || message.touched)">
+                <div *ngIf="message.errors?.['required']">Votre message est requis.</div>
+                <div *ngIf="message.errors?.['maxlength']">Votre message doit contenir au maximum 5000 caractères.</div>
+                <div *ngIf="message.errors?.['minlength']">Votre message doit contenir au moins 3 caractères.</div>
+            </div>
         </div>
+        <!-- Boutton de soubscription-->
         <div class="col-12">
             <div class="d-flex justify-content-center">
-                <button class="btn btn-primary" type="submit" (click)="sendMail()">Soumettre</button>
+                <button class="btn btn-primary" type="submit" id="submit" [disabled]="!mailForm.valid">Envoyer votre mail</button>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="alert alert-danger mt-1" *ngIf="mailForm.invalid && (mailForm.dirty || mailForm.touched)">Tous les champs doivent être renseigné</div>
+                <div *ngIf="sent" class="alert alert-success mt-1">Votre mail a bien été envoyé !</div>
+                <div *ngIf="error" class="alert alert-danger mt-1">Votre mail n'a pas pu être envoyé, veuillez-réessayer !</div>
             </div>
         </div>
     </div>

@@ -1,30 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Titreh2Component } from '../titres/titreh2/titreh2.component';
 import { SendMailService } from '../../services/send-mail.service';
+import { FormsModule, NgForm } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [Titreh2Component],
+  imports: [Titreh2Component, FormsModule, NgIf],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
 export class ContactFormComponent {
-  name= "Hugo Melin"
-  to= "artisans@mail.com"
-  subject= "Test mail"
-  email= "Test@mail.com"
-  message= "test"
+  sent:boolean = false
+  error:boolean = false
+
+  @Input() artisanMail:any
 
   constructor(private sendMailService: SendMailService) {}
 
-  sendMail() {
-    this.sendMailService.sendMail(this.name, this.email, this.to, this.subject, this.message).subscribe(
-      response => {
+  sendMail(form:NgForm) {
+    this.sendMailService.sendMail(form.value,this.artisanMail).subscribe(
+      info => {
+        this.sent = true
         console.log('Email sent successfully!')
       },
       error => {
         console.log('Error sending email:', error)
+        if (error.status === 200) {
+          this.sent = true
+          form.resetForm()
+        } else {
+          this.error = true
+        }
       }
     );
   }

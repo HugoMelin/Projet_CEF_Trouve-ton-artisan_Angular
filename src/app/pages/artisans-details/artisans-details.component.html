@@ -1,0 +1,32 @@
+<div id="artisansDetails" class="container">
+    <div class="row gap-2">
+        <div class="col-12 d-flex justify-content-between align-items-center">
+            <app-titreh1 [titre]="data.name"/>
+            <div class="col-3">
+                <app-progress-bar [note]="data.note"/>
+            </div>
+        </div>
+        <div class="col-6 col-lg-4 mx-auto">
+            <app-images-artisans [category]="data.category" />
+        </div>
+        <div class="col-12 d-flex justify-content-between align-items-center">
+            <p>{{ data.specialty }}</p>
+            <p>{{ data.location }}</p>
+        </div>
+        <div class="col-12">
+            <div class="d-flex justify-content-center">
+                <app-titreh2 titre="A propos" />
+            </div>
+        </div>
+        <div class="col-12">
+            <p>{{ data.about }}</p>
+        </div>
+        <div *ngIf="data.website != ''" class="col-12 d-flex justify-content-center">
+            <a [href]="data.website" target="_blank" class="btn btn-primary">Visiter le site internet de l'artisan</a>
+        </div>
+
+        <div class="col-12 col-md-8 mx-auto">
+            <app-contact-form [artisanMail]="data.email" />
+        </div>
+    </div>
+</div>

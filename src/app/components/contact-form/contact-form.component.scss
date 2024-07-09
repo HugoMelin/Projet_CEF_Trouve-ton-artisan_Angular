@@ -1,0 +1,21 @@
+form {
+    .required {
+        color: red;
+    }
+
+    .form-control {
+        background-color: #f1f8fc;
+        border-color: #0074c7;
+        border-radius: 1rem;
+        color: #384050;
+    }
+
+    .btn {
+        border-radius: 1rem;
+    }
+
+    .alert {
+        --bs-alert-padding-y : 0.55rem;
+        font-size: 1rem;
+    }
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArtisansDataService } from '../../services/artisans-data.service';
 import { Titreh1Component } from '../../components/titres/titreh1/titreh1.component';
 import { ProgressBarComponent } from '../../components/progress-bar/progress-bar.component';
@@ -22,6 +22,7 @@ export class ArtisansDetailsComponent {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private artisansDataService: ArtisansDataService
   ) {}
 
@@ -31,5 +32,9 @@ export class ArtisansDetailsComponent {
     this.routeSub = this.route.params.subscribe(params => {
       this.data = this.artisansData.find((item: { id: any; }) => item.id === params['id'])
     })
+
+    if (!this.data) {
+      this.router.navigate(["content-not-found"])
+    }
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from "@angular/platform-browser";
 import { ActivatedRoute, Router } from '@angular/router';
 import { Titreh1Component } from '../../components/titres/titreh1/titreh1.component';
 import { Titreh2Component } from '../../components/titres/titreh2/titreh2.component';
@@ -28,7 +27,6 @@ export class ArtisansComponent implements OnInit {
   recherche:any = ""
 
   constructor(
-    private titleService:Title,
     private route: ActivatedRoute,
     private router: Router,
     private artisansDataService: ArtisansDataService)
@@ -45,7 +43,6 @@ export class ArtisansComponent implements OnInit {
     this.recherche = this.recherche.search
     })
 
-    this.titleService.setTitle("Annuaires | Trouve ton artisan") 
     this.artisans = this.artisansDataService.artisanList
 
     if (!(this.categorie == "bâtiment" || this.categorie == "services" || this.categorie === "fabrication" || this.categorie === "alimentation" || !this.categorie)) {

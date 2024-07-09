@@ -7,8 +7,8 @@ import { ErrorHandler, inject } from '@angular/core';
 
 export const routes: Routes = [
     {path: "", component: HomeComponent, title: "Accueil | Trouve ton artisan"},
-    {path: "artisans", component: ArtisansComponent},
-    {path: "artisans/:categorie", component: ArtisansComponent},
-    {path: "artisans/details/:id", component: ArtisansDetailsComponent},
+    {path: "artisans", component: ArtisansComponent, title: "Annuaire | Trouve ton artisan"},
+    {path: "artisans/:categorie", component: ArtisansComponent, title: "Catégorie | Trouve ton artisan"},
+    {path: "artisans/details/:id", component: ArtisansDetailsComponent, title: "Artisans | Trouve ton artisan"},
     {path: "**", component: ContentNotFoundComponent, title: "Erreur 404 | Touve ton artisan"}
 ];

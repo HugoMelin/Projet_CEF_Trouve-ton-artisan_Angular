@@ -20,15 +20,15 @@ export class ContactFormComponent {
   constructor(private sendMailService: SendMailService) {}
 
   sendMail(form:NgForm) {
+    //reset des messages succes et error du formulaire
     this.sent = false
     this.error = false
+
+    //gestion envoie de l'mail en faisant appel à sendMailService
     this.sendMailService.sendMail(form.value,this.artisanMail).subscribe(
-      info => {
-        this.sent = true
-        console.log('Email sent successfully!')
-      },
+      info => {},
       error => {
-        console.log('Error sending email:', error)
+        //alert succes ou error 
         if (error.status === 200) {
           this.sent = true
           form.resetForm()

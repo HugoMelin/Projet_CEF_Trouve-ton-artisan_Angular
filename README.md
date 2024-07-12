@@ -1,27 +1,42 @@
 # TrouveTonArtisanAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+## Description
 
-## Development server
+Bienvenue dans le projet "Trouve ton artisan" réaliser par 'Hugo Melin' pour le CEF en juillet 2024.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Prérequis
+- Node.js (v20.11.1)
+- npm (v1.2.4)
+- Angular CLI (v18.0.3)
+- MailHog
 
-## Code scaffolding
+## Installation en local
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clonez le dépôt :
+`git clone https://github.com/HugoMelin/Projet_CEF_Trouve-ton-artisan_Angular.git`
 
-## Build
+2. Naviguez dans le répertoire du projet :
+`cd Projet_CEF_Trouve-ton-artisan_Angular`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. Installez les dépendances :
+`npm install`
 
-## Running unit tests
+## Lacement de l'application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Pour démarrer le serveur de développement, exécutez :
+`ng serve`
 
-## Running end-to-end tests
+2. Ouvrez votre navigateur et accédez à `http://localhost:4200`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Lancement du serveur mail
 
-## Further help
+1. Pour démarrer le serveur de mail, naviguez ver le répertoire du serveur :
+`cd server`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. Exécutez :
+`node index` - Le serveur sera accessible sur le port 3000 et enverra les mails sur le port 1025.
+
+## Application en ligne 
+
+Vous trouverez l'application hébergé sur un serveur 'alwaysData' à l'adress suivante : 
+`https://hugomelin.alwaysdata.net/`

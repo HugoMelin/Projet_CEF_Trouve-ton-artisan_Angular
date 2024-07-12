@@ -19,23 +19,19 @@ export class ContactFormComponent {
 
   constructor(private sendMailService: SendMailService) {}
 
-  sendMail(form:NgForm) {
+  async sendMail(form:NgForm) {
     //reset des messages succes et error du formulaire
     this.sent = false
     this.error = false
 
     //gestion envoie de l'mail en faisant appel à sendMailService
-    this.sendMailService.sendMail(form.value,this.artisanMail).subscribe(
-      info => {},
-      error => {
-        //alert succes ou error 
-        if (error.status === 200) {
-          this.sent = true
-          form.resetForm()
-        } else {
-          this.error = true
-        }
-      }
-    );
+    try {
+      await this.sendMailService.sendMail(form.value,this.artisanMail)
+      this.sent = true
+      form.resetForm()
+    } catch (e) {
+      this.error = true
+      console.error('Composent : ' + e)
+    }
   }
 }

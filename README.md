@@ -8,7 +8,7 @@ Bienvenue dans le projet "Trouve ton artisan" réaliser par 'Hugo Melin' pour le
 - Node.js (v20.11.1)
 - npm (v1.2.4)
 - Angular CLI (v18.0.3)
-- MailHog
+- MailHog (v1.0.1)
 
 ## Installation en local
 
@@ -35,6 +35,9 @@ Bienvenue dans le projet "Trouve ton artisan" réaliser par 'Hugo Melin' pour le
 
 2. Exécutez :
 `node index` - Le serveur sera accessible sur le port 3000 et enverra les mails sur le port 1025.
+
+3. Lancez l'exécutable MailHog téléchargeable ici : 
+`https://github.com/mailhog/MailHog/releases/tag/v1.0.1`
 
 ## Application en ligne 
 
